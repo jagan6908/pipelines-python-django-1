@@ -1,86 +1,41 @@
-# B2B Product - Data Mass Script
+# Sample Python app for Azure Pipelines docs
 
-This repository contains the B2B Data Mass Script, aimed to those who want to create all necessary information to execute tests, develop new features and even explore the apps.
+For information on how to use this repository, see [Python](https://docs.microsoft.com/azure/devops/pipelines/languages/python).
 
-## System Requirements
+| Example | Build status |
+|---------|--------------|
+| Test Build (YAML) | [![Build Status](https://ab-inbev.visualstudio.com/GHQ_B2B_Delta/_apis/build/status/zz-sandbox/test-robot-integration?branchName=master)](https://ab-inbev.visualstudio.com/GHQ_B2B_Delta/_build/latest?definitionId=107?branchName=master) |
+| Build (YAML) | [![Build status](https://dev.azure.com/pipelines-docs/docs/_apis/build/status/python-django/python)](https://dev.azure.com/pipelines-docs/docs/_build/latest?definitionId=13) |
+| Build image and push to Docker Hub (YAML) | [![Build status](https://dev.azure.com/pipelines-docs/docs/_apis/build/status/python-django/python-dockerhub)](https://dev.azure.com/pipelines-docs/docs/_build/latest?definitionId=14) |
+| Build image and push to Azure Container Registry (YAML) | [![Build status](https://dev.azure.com/pipelines-docs/docs/_apis/build/status/python-django/python-acr)](https://dev.azure.com/pipelines-docs/docs/_build/latest?definitionId=15) |
 
-* Operating system based on UNIX.
+# Contributing
 
-## Required Tooling
+This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
-* [Git][GitDoc]
-* [Python 3.5 or higher][Python]
+When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
+a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
+provided by the bot. You will only need to do this once across all repos using our CLA.
 
-## Directories structure organization
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-| Directory | Description |
-| ------ | ------ |
-| data-mass | All files related to **Data Mass** creation. Includes different files which are used for specific purposes, such as the creation of a new account, and the input of different available product types for each Zone. |
+# Legal Notices
 
-## Important Files
+Microsoft and any contributors grant you a license to the Microsoft documentation and other content
+in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
+see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT), see the
+[LICENSE-CODE](LICENSE-CODE) file.
 
-| File | Description |
-| ------ | ------ |
-| [data-mass/main.py](data-mass/main.py) | Holds menus and sub-menus for each available operation. It also executes the script.  |
-| [data-mass/common.py](data-mass/common.py) | Holds validation and external functions, and API requests. |
-| [.gitignore](.gitignore) | Holds all files that should not be tracked by system version control. |
+Microsoft, Windows, Microsoft Azure and/or other Microsoft products and services referenced in the documentation
+may be either trademarks or registered trademarks of Microsoft in the United States and/or other countries.
+The licenses for this project do not grant you rights to use any Microsoft names, logos, or trademarks.
+Microsoft's general trademark guidelines can be found at http://go.microsoft.com/fwlink/?LinkID=254653.
 
-## Important Notes
+Privacy information can be found at https://privacy.microsoft.com/en-us/
 
-### Azure IAM
-
-This script are also capable to create Azure IAM (Identity and Access Management) Users.
-
-One user could be created at a time using Option "Create User IAM" under "Microservice" menu from "main.py" Script.
-
-There's an Integration between Azure and Magento to create a new User in Magento after an Azure IAM User is created. The time to this happen may vary but you should expect to wait around 30 seconds for the synchronization.
-
-At this this time, there's only one Country (DO - Dominican Republic) and two Environments Enabled with IAM Feature:
-- DEV for Web
-- UAT for Mobile
-
-Here we have a list of fields to create an IAM User:
-- A valid E-mail Address - Ex: abiuser@mail.com
-- Password - Ex: Magento123
-- First Name - Email Prefix - Ex: abiuser
-- Last Name - Email Prefix - Ex: abiuser
-- Account ID - Ex: 0000248660
-- Tax ID - Ex: 00300489572
-
-## Running the Script
-
-To launch the application menu, please follow the steps below after opening the Terminal:
-
-```sh
-cd <project-root-dir>/data-mass/
-```
-
-You may not have all required dependencies installed by default. Install them by using the pip command:
-
-```sh
-pip3 install -r requirements.txt
-```
-
-And then you can finally execute the script:
-
-```sh
-python3 main.py
-```
-
-By running this command, anyone will be able to see the application menu, and then choose any of the available options depending on the usage.
-
-## Additional information
-
-* [Development Standards][Standards]
-* [Release Notes][Release Notes]
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-[GitDoc]: https://git-scm.com/doc
-[Python]: https://www.python.org/downloads/
-[VisualStudioCode]: https://code.visualstudio.com/download
-[Requests]: https://pypi.org/project/requests/
-[JSONPath-ext RW]: https://pypi.org/project/jsonpath-rw-ext/
-[JSONPath RW]: https://pypi.org/project/jsonpath-rw/
-[Standards]: https://anheuserbuschinbev.sharepoint.com/sites/b2bengineering/architecture/SitePages/Data-Mass-Application.aspx
-[Release Notes]: https://anheuserbuschinbev.sharepoint.com/:b:/s/b2bengineering/EaTlUWEzsp1EqdmKaqBclL4ByT6uvxDV1nF1erEOsD-stQ?e=QQyxU8
+Microsoft and any contributors reserve all others rights, whether under their respective copyrights, patents,
+or trademarks, whether by implication, estoppel or otherwise.
